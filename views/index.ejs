@@ -8,12 +8,16 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
+    <a href="/mindful/new">Add a *new Event</a>
+    <br>
+    <br>
+    <br>
     <h1>index page</h1>
     <ul>
         <% for(let i = 0; i< mindful.length; i++){ %>
             <li>
-                <a href="/mindful/ <%= mindful[i].id %>" <%= mindful[i].name %></a>
-                <!-- <%= mindful[i].afterActivity %> -->
+                <a href="/mindful/ <%= mindful[i].id %>"> <%= mindful[i].name %></a>
+                <%= mindful[i].afterActivity %>
             </li>
        <% } %>
     </ul>

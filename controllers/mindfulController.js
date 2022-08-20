@@ -43,6 +43,33 @@ router.get('/new', (req, res) => {
 	res.render('new.ejs');
 });
 
+  //show route
+  router.get('/:id', async(req, res)=>{
+    const mindful = await Mindful.findById(req.params.id)
+    res.render('show.ejs', {
+        mindful: mindful
+    })
+})
+
+//create
+router.post('/', (req, res)=>{
+    Mindful.create(req.body, (error, data)=>{
+        if (error){
+            console.log('error', error)
+        }else{
+            res.redirect('/mindful')
+        }
+    })
+})
+
+//Delete route
+router.delete('/:id', (req, res)=>{
+    Mindful.findByIdAndRemove(req.params.id, (error, data)=>{
+      if(error)console.log(error)
+      res.redirect('/mindful')
+    })
+  })
+
 
 
 module.exports = router
