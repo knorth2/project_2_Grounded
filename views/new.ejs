@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
+    <a href="/mindful">List of Events (index)</a>
+    <br>
+    <br>
     <h1>Add New Mindful Event</h1>
     <form method="POST" action="/mindful">
         <fieldset>
@@ -36,7 +39,7 @@
         </fieldset>
         <fieldset>
             <label for="positive">What is something positive that happened today?</label>
-            <textarea name="positive" id="positive" cols="30" rows="10" placeholder="Enter positive event"></textarea>
+            <input id="positive" type="text" name="positive" placeholder="Enter positive event">
         </fieldset>
         <button>Add Mindful Event!</button>
     </form>

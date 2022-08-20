@@ -8,6 +8,20 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-    
+    <a href="/mindful">List of events (index)</a>
+    <br>
+    <h1><%= mindful.date %></h1>
+    <h2><%= mindful.name %></h1>
+    <p><%= mindful.beforeActivity %></p>
+    <p><%= mindful.afterActivity %></p>
+    <p><%= mindful.water %></p>
+    <p><%= mindful.sleep %></p>
+    <p><%= mindful.positive %></p>
+
+    <br>
+    <br>
+     <form class="delete" action="/products/<%= product.id%>?_method=DELETE" method="POST">
+         <input class="deleteButton" type="submit" value="DELETE">
+     </form>
 </body>
 </html>
