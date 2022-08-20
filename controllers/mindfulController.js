@@ -4,7 +4,7 @@ const Mindful = require('../models/mindful.js')
 
 //index route
 router.get('/', async (req, res) => {
-	const mindful = await Mindful.find({});
+	let mindful = await Mindful.find({});
 	res.render('index.ejs', { mindful });
 });
 
@@ -16,7 +16,7 @@ router.get('/seed', (req, res) => {
                 date: 'August 18, 2022',
 				activityName: 'Hike with my dogs',
                 stateOfMindBeforeActivity: 'anxious',
-                stateOfMindAfterActivity: 'determined',
+                stateOfMindAfterActivity: 'determined/calm',
                 waterConsumption: 72,
                 hoursSlept: 9,
                 postiveOccuranceOfTheDay: 'Decided on my project subject',
@@ -33,7 +33,7 @@ router.get('/seed', (req, res) => {
 			
 		],
 		(err, data) => {
-			res.redirect('/fruits');
+			res.redirect('/mindful');
 		}
 	);
 });

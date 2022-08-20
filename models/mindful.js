@@ -13,4 +13,4 @@ const mindfulSchema = new mongoose.Schema({
 
 const Mindful = mongoose.model('Mindful', mindfulSchema)
 
-module.exports.Mindful
+module.exports = Mindful
