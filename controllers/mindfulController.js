@@ -14,21 +14,21 @@ router.get('/seed', (req, res) => {
 		[
 			{
                 date: 'August 18, 2022',
-				activityName: 'Hike with my dogs',
-                stateOfMindBeforeActivity: 'anxious',
-                stateOfMindAfterActivity: 'determined/calm',
-                waterConsumption: 72,
-                hoursSlept: 9,
-                postiveOccuranceOfTheDay: 'Decided on my project subject',
+				name: 'Hike with my dogs',
+                beforeActivity: 'anxious',
+                afterActivity: 'determined/calm',
+                water: 72,
+                sleep: 9,
+                postive: 'Decided on my project subject',
 			},
             {
                 date: 'August 19, 2022',
-				activityName: 'yoga and belly breathing',
-                stateOfMindBeforeActivity: 'anxious',
-                stateOfMindAfterActivity: 'determined',
-                waterConsumption: 50,
-                hoursSlept: 7,
-                postiveOccuranceOfTheDay: 'finished my homework before project proposal',
+				name: 'yoga and belly breathing',
+                beforeActivity: 'anxious',
+                afterActivity: 'determined',
+                water: 50,
+                sleep: 7,
+                postive: 'finished my homework before project proposal',
 			},
 			
 		],
@@ -36,6 +36,11 @@ router.get('/seed', (req, res) => {
 			res.redirect('/mindful');
 		}
 	);
+});
+
+// NEW
+router.get('/new', (req, res) => {
+	res.render('new.ejs');
 });
 
 

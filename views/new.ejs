@@ -8,6 +8,37 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-    
+    <h1>Add New Mindful Event</h1>
+    <form method="POST" action="/mindful">
+        <fieldset>
+            <label for="date">Date:</label>
+            <input id="date" type="text" name="date" placeholder="Enter new date">
+        </fieldset>
+        <fieldset>
+            <label for="name">Activity Name:</label>
+            <input id="name" type="text" name="name" placeholder="Enter daily activity">
+        </fieldset>
+        <fieldset>
+            <label for="beforeActivity">Mindset before Activity:</label>
+            <input id="beforeActivity" type="text" name="beforeActivity" placeholder="Enter mindset">
+        </fieldset>
+        <fieldset>
+            <label for="afterActivity">Mindset after Activity:</label>
+            <input id="afterActivity" type="text" name="afterActivity" placeholder="Enter mindset">
+        </fieldset>
+        <fieldset>
+            <label for="water">Water Consumption of the Day:</label>
+            <input id="water" type="text" name="water" placeholder="Enter water in ounces">
+        </fieldset>
+        <fieldset>
+            <label for="sleep">Amount of sleep:</label>
+            <input id="sleep" type="text" name="sleep" placeholder="Enter sleep in hours">
+        </fieldset>
+        <fieldset>
+            <label for="positive">What is something positive that happened today?</label>
+            <textarea name="positive" id="positive" cols="30" rows="10" placeholder="Enter positive event"></textarea>
+        </fieldset>
+        <button>Add Mindful Event!</button>
+    </form>
 </body>
 </html>

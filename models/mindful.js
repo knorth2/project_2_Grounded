@@ -3,12 +3,12 @@ const mongoose = require('mongoose')
 //Create Schema
 const mindfulSchema = new mongoose.Schema({
     date: {type: String, required: true},
-    activityName: {type: String, required: true},
-    stateOfMindBeforeActivity: String,
-    stateOfMindAfterActivity: String,
-    waterConsumption: Number,
-    hoursSlept: Number,
-    postiveOccuranceOfTheDay: String,
+    name: {type: String, required: true},
+    beforeActivity: String,
+    afterActivity: String,
+    water: Number,
+    sleep: Number,
+    postive: String,
 })
 
 const Mindful = mongoose.model('Mindful', mindfulSchema)
