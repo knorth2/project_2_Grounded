@@ -5,6 +5,7 @@ const Mindful = require('../models/mindful.js')
 //index route
 router.get('/', async (req, res) => {
 	let mindful = await Mindful.find({});
+    console.log(mindful)
 	res.render('index.ejs', { mindful });
 });
 
@@ -28,7 +29,7 @@ router.get('/seed', (req, res) => {
                 afterActivity: 'determined',
                 water: 50,
                 sleep: 7,
-                postive: 'finished my homework before project proposal',
+                postiveEvent: 'finished my homework before project proposal',
 			},
 			
 		],
@@ -46,6 +47,7 @@ router.get('/new', (req, res) => {
   //show route
   router.get('/:id', async(req, res)=>{
     const mindful = await Mindful.findById(req.params.id)
+    console.log(mindful)
     res.render('show.ejs', {
         mindful: mindful
     })

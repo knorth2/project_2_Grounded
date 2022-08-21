@@ -16,12 +16,12 @@
     <p><%= mindful.afterActivity %></p>
     <p><%= mindful.water %></p>
     <p><%= mindful.sleep %></p>
-    <p><%= mindful.positive %></p>
+    <p><%= mindful.positiveEvent %></p>
 
     <br>
     <br>
-     <form class="delete" action="/products/<%= product.id%>?_method=DELETE" method="POST">
-         <input class="deleteButton" type="submit" value="DELETE">
-     </form>
+    <form class="delete" action="/mindful/<%= mindful.id%>?_method=DELETE" method="POST">
+        <input class="deleteButton" type="submit" value="DELETE">
+    </form>
 </body>
 </html>
