@@ -14,16 +14,10 @@
     <br>
     <h1>index page</h1>
     <ul>
-        <% for(let i = 0; i< mindful.length; i++){ %>
+        <% for(let i = 0; i < mindful.length; i++){ %>
             <li>
                 <a href="/mindful/ <%= mindful[i].id %>"> <%= mindful[i].date %></a>
                
-                <p><%= mindful[i].name %></p>
-                <p><%= mindful[i].beforeActivity %></p>
-                <p><%= mindful[i].afterActivity %></p>
-                <p><%= mindful[i].water %></p>
-                <p><%= mindful[i].sleep %></p>
-                <p><%= mindful[i].positiveEvent %></p> 
             </li>
            
        <% } %>

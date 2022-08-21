@@ -9,35 +9,35 @@ router.get('/', async (req, res) => {
 	res.render('index.ejs', { mindful });
 });
 
-// SEED
-router.get('/seed', (req, res) => {
-	Mindful.create(
-		[
-			{
-                date: 'August 18, 2022',
-				name: 'Hike with my dogs',
-                beforeActivity: 'anxious',
-                afterActivity: 'determined/calm',
-                water: 72,
-                sleep: 9,
-                postive: 'Decided on my project subject',
-			},
-            {
-                date: 'August 19, 2022',
-				name: 'yoga and belly breathing',
-                beforeActivity: 'anxious',
-                afterActivity: 'determined',
-                water: 50,
-                sleep: 7,
-                postiveEvent: 'finished my homework before project proposal',
-			},
+// // SEED
+// router.get('/seed', (req, res) => {
+// 	Mindful.create(
+// 		[
+// 			{
+//                 date: 'August 18, 2022',
+// 				name: 'Hike with my dogs',
+//                 beforeActivity: 'anxious',
+//                 afterActivity: 'determined/calm',
+//                 water: 72,
+//                 sleep: 9,
+//                 postiveEvent: 'Decided on my project subject',
+// 			},
+//             {
+//                 date: 'August 19, 2022',
+// 				name: 'yoga and belly breathing',
+//                 beforeActivity: 'anxious',
+//                 afterActivity: 'determined',
+//                 water: 50,
+//                 sleep: 7,
+//                 postiveEvent: 'finished my homework before project proposal',
+// 			},
 			
-		],
-		(err, data) => {
-			res.redirect('/mindful');
-		}
-	);
-});
+// 		],
+// 		(err, data) => {
+// 			res.redirect('/mindful');
+// 		}
+// 	);
+// });
 
 // NEW
 router.get('/new', (req, res) => {
@@ -45,7 +45,7 @@ router.get('/new', (req, res) => {
 });
 
   //show route
-  router.get('/:id', async(req, res)=>{
+  router.get('/:id', async(req, res)=>{  //([0-9a-fA-F]{24})
     const mindful = await Mindful.findById(req.params.id)
     console.log(mindful)
     res.render('show.ejs', {
@@ -61,6 +61,7 @@ router.post('/', (req, res)=>{
         }else{
             res.redirect('/mindful')
         }
+        
     })
 })
 

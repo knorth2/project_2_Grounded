@@ -1,14 +1,18 @@
 const express = require('express')
 const app = express()
-const port = 3000
 const Mindful = require('./models/mindful.js')
 const methodOverride = require('method-override')
 
+// set up access to .env file
+require('dotenv').config()
+
+const PORT = process.env.PORT
+
 //import mongoose
 const mongoose = require('mongoose')
+const mongoURI = process.env.MONGODB_URI
 
-//setup Mongoose
-mongoose.connect('mongodb://127.0.0.1:27017/basiccrud');
+mongoose.connect(mongoURI);
 mongoose.connection.once('open', () => {
 	console.log('connected to mongo');
 });
@@ -16,7 +20,7 @@ mongoose.connection.once('open', () => {
 //middleware
 app.use(express.static('public'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
 
 const mindfulController = require('./controllers/mindfulController.js')
@@ -27,6 +31,6 @@ app.get('/', (req, res)=>{
     res.send('Are you listening?')
 })
 
-app.listen(port, ()=>{
-    console.log(`Listening on port, ${port}🧘🏼‍♀️`)
+app.listen(PORT, ()=>{
+    console.log(`Listening on port, ${PORT}🧘🏼‍♀️`)
 })
