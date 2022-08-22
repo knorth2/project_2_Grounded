@@ -12,34 +12,35 @@
     <br>
     <br>
     <h1>Add New Mindful Event</h1>
+    
     <form method="POST" action="/mindful">
         <fieldset>
-            <label for="date">Date:</label>
+            <label for="date">Date: </label>
             <input id="date" type="text" name="date" placeholder="Enter new date">
         </fieldset>
         <fieldset>
-            <label for="name">Activity Name:</label>
-            <input id="name" type="text" name="name" placeholder="Enter daily activity">
+            <label for="beforeMovement">Mindset before Movement: </label>
+            <input id="beforeMovement" type="text" name="beforeMovement" placeholder="Enter mindset">
         </fieldset>
         <fieldset>
-            <label for="beforeActivity">Mindset before Activity:</label>
-            <input id="beforeActivity" type="text" name="beforeActivity" placeholder="Enter mindset">
-        </fieldset>
-        <fieldset>
-            <label for="afterActivity">Mindset after Activity:</label>
-            <input id="afterActivity" type="text" name="afterActivity" placeholder="Enter mindset">
-        </fieldset>
-        <fieldset>
-            <label for="water">Water Consumption of the Day:</label>
+            <label for="water">Water Consumption Goals of the Day: </label>
             <input id="water" type="number" name="water" placeholder="Enter water in ounces">
         </fieldset>
         <fieldset>
-            <label for="sleep">Amount of sleep:</label>
+            <label for="sleep">Amount of sleep: </label>
             <input id="sleep" type="number" name="sleep" placeholder="Enter sleep in hours">
         </fieldset>
         <fieldset>
-            <label for="positiveEvent">What is something positive that happened today?</label>
-            <textarea name="positiveEvent" id="positiveEvent" cols="30" rows="10"></textarea>
+            <label for="movement">How did you move your body today?: </label>
+            <input id="movement" type="text" name="movement" placeholder="Did you move today?">
+        </fieldset>
+        <fieldset>
+            <label for="afterMovement">Mindset after Movement: </label>
+            <input id="afterMovement" type="text" name="afterMovement" placeholder="Enter mindset">
+        </fieldset>
+        <fieldset>
+            <label for="positiveEvent"> </label>
+            <textarea name="positiveEvent" id="positiveEvent" cols="30" rows="10"> What is something positive that happened today?</textarea>
         </fieldset>
         <br>
         <button>Add Mindful Event!</button>
