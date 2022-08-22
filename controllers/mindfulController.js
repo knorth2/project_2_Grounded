@@ -2,8 +2,14 @@ const express = require('express');
 const router = express.Router()
 const Mindful = require('../models/mindful.js')
 
+
+//how to make home??
+router.get('/', (req, res) => {
+	res.render('home.ejs');
+});
+
 //index route
-router.get('/', async (req, res) => {
+router.get('/index', async (req, res) => {
 	let mindful = await Mindful.find({});
     console.log(mindful)
 	res.render('index.ejs', { mindful });
@@ -45,7 +51,7 @@ router.get('/new', (req, res) => {
 });
 
   //show route
-  router.get('/:id', async(req, res)=>{  //([0-9a-fA-F]{24})
+  router.get('/:id', async(req, res)=>{  
     const mindful = await Mindful.findById(req.params.id)
     res.render('show.ejs', {
         mindful: mindful
@@ -58,7 +64,7 @@ router.post('/', (req, res)=>{
         if (error){
             console.log('error', error)
         }else{
-            res.redirect('/mindful')
+            res.redirect('/mindful/index')
         }
         
     })
@@ -68,9 +74,23 @@ router.post('/', (req, res)=>{
 router.delete('/:id', (req, res)=>{
     Mindful.findByIdAndRemove(req.params.id, (error, data)=>{
       if(error)console.log(error)
-      res.redirect('/mindful')
+      res.redirect('/mindful/index')
     })
   })
+
+  // EDIT
+router.get('/:id/edit', (req, res) => {
+	Mindful.findById(req.params.id, (err, data) => {
+		res.render('edit.ejs', {mindful: data})
+	})
+})
+
+// UPDATE
+router.put('/:id', (req, res) => {
+	Mindful.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, data) => {
+		res.redirect('/mindful/index')
+	})
+})
 
 
 

@@ -8,16 +8,17 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-    <a href="/mindful">List of events (index)</a>
+    <a href="/mindful/index">List of events (index)</a>
     <br>
     <h1>Today's Date: <%= mindful.date %></h1>
-    <h2>How are you feeling today? <%= mindful.beforeActivity %></h1>
+    <h2>How are you feeling today?<br> <%= mindful.beforeActivity %></h1>
     <p>What activity di you do to help ground you? <%= mindful.name %></p>
     <p>How did you feel after your activity? <%= mindful.afterActivity %></p>
-    <p><%= mindful.water %></p>
-    <p><%= mindful.sleep %></p>
-    <p><%= mindful.positiveEvent %></p>
-
+    <p>How much water have you drank today? <%= mindful.water %></p>
+    <p>How much sleep did you get last night? <%= mindful.sleep %></p>
+    <p>Can you recall one positive thing that happened today? <%= mindful.positiveEvent %></p>
+    <br>
+    <a class="showEdit" href="/mindful/<%=mindful.id %>/edit">Edit</a>
     <br>
     <br>
     <form class="delete" action="/mindful/<%= mindful.id %>?_method=DELETE" method="POST">
