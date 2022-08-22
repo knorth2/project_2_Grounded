@@ -8,7 +8,7 @@ const mindfulSchema = new mongoose.Schema({
     sleep: Number,
     movement: String,
     afterMovement: String,
-    postiveEvent: String,
+    positiveEvent: String,
 })
 
 const Mindful = mongoose.model('Mindful', mindfulSchema)

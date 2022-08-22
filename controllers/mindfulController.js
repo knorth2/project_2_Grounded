@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
 //index route
 router.get('/index', async (req, res) => {
 	let mindful = await Mindful.find({});
-    console.log(mindful)
 	res.render('index.ejs', { mindful });
 });
 
@@ -21,7 +20,7 @@ router.get('/index', async (req, res) => {
 // 		[
 // 			{
 //                 date: 'August 18, 2022',
-// 				name: 'Hike with my dogs',
+// 				   name: 'Hike with my dogs',
 //                 beforeActivity: 'anxious',
 //                 afterActivity: 'determined/calm',
 //                 water: 72,
@@ -30,7 +29,7 @@ router.get('/index', async (req, res) => {
 // 			},
 //             {
 //                 date: 'August 19, 2022',
-// 				name: 'yoga and belly breathing',
+// 				   name: 'yoga and belly breathing',
 //                 beforeActivity: 'anxious',
 //                 afterActivity: 'determined',
 //                 water: 50,
