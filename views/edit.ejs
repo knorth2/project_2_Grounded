@@ -9,5 +9,41 @@
 </head>
 <body>
     <h1>Edit Page</h1>
+    <form action="/mindful/<%= mindful.id %>?_method=PUT" method="POST">
+        <fieldset>
+            <label for="date">Date:</label>
+            <input id="date" type="text" name="date" value="<%= mindful.date%>">
+        </fieldset>
+        <fieldset>
+            <label for="name">Activity Name:</label>
+            <input id="name" type="text" name="name" value="<%=mindful.name%>">
+        </fieldset>
+        <fieldset>
+            <label for="beforeActivity">Mindset before Activity:</label>
+            <input id="beforeActivity" type="text" name="beforeActivity" value="<%=mindful.beforeActivity%>">
+        </fieldset>
+        <fieldset>
+            <label for="afterActivity">Mindset after Activity:</label>
+            <input id="afterActivity" type="text" name="afterActivity" value="<%=mindful.afterActivity%>">
+        </fieldset>
+        <fieldset>
+            <label for="water">Water Consumption of the Day:</label>
+            <input id="water" type="number" name="water" value="<%=mindful.water%>">
+        </fieldset>
+        <fieldset>
+            <label for="sleep">Amount of sleep:</label>
+            <input id="sleep" type="number" name="sleep" value="<%=mindful.sleep%>">
+        </fieldset>
+        <fieldset>
+            <label for="positiveEvent">What is something positive that happened today?</label>
+            <input id="positiveEvent" type="text" name="positiveEvent"  value="<%=mindful.positiveEvent%>">
+        </fieldset>
+        <br>
+        <br>
+        <br>
+        <input type="submit" name="" value="Submit Changes"/>
+    </form>
+    <br>
+    <a href="/mindful/index">List of Events (index)</a>
 </body>
 </html>

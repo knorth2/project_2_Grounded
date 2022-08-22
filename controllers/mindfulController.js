@@ -88,7 +88,8 @@ router.get('/:id/edit', (req, res) => {
 // UPDATE
 router.put('/:id', (req, res) => {
 	Mindful.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, data) => {
-		res.redirect('/mindful/index')
+        const update = req.params.id
+		res.redirect('/mindful/' + update)
 	})
 })
 
