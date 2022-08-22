@@ -47,7 +47,6 @@ router.get('/new', (req, res) => {
   //show route
   router.get('/:id', async(req, res)=>{  //([0-9a-fA-F]{24})
     const mindful = await Mindful.findById(req.params.id)
-    console.log(mindful)
     res.render('show.ejs', {
         mindful: mindful
     })
