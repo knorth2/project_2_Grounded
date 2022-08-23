@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const Mindful = require('./models/mindful.js')
 const methodOverride = require('method-override')
+const multer = require('multer');
 
 // set up access to .env file
 require('dotenv').config()

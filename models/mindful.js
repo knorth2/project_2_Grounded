@@ -9,6 +9,7 @@ const mindfulSchema = new mongoose.Schema({
     movement: String,
     afterMovement: String,
     positiveEvent: String,
+    myPic: Image,
 })
 
 const Mindful = mongoose.model('Mindful', mindfulSchema)
