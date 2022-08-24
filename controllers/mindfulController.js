@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router()
 const Mindful = require('../models/mindful.js')
 const multer = require('multer');
-const upload = multer({ dest: './uploads/' })
-
 
 //how to make home??
 router.get('/', (req, res) => {
@@ -72,7 +70,17 @@ router.post('/', (req, res)=>{
 })
 
 //upload photo
-router.post('/pin', upload.single('myPic'), (req, res)=>{
+const Storage = multer.diskStorage({   //access both the file and the body
+     dest: 'uploads',           //this tells it to create uploads folder to store files
+     filename: (req, file, cb)=>{
+        cb(null, file.myPic)
+     }
+    })
+const upload = multer({
+    storage:Storage
+})
+
+router.post('/pin', upload.single('myPic'), (req, res)=>{ //use name field value on the form so multer knows while field on the request it should look for the files in
     const newPin = new Mindful({
         date: req.body.date,
         beforeMovement: req.body.beforeMovement,
@@ -81,18 +89,17 @@ router.post('/pin', upload.single('myPic'), (req, res)=>{
         movement: req.body.movement,
         afterMovement: req.body.afterMovement,
         positiveEvent: req.body.positiveEvent,
-        myPic: req.file.filename,
+        myPic: req.file.filename,   
     })
-    newPin.save((error, data)=>{
-        if(!error){
-            res.redirect('/mindful/index')
-            console.log(req.file.filename)
-        }else{
+    newPin.save(() =>{
+        if (error){
             console.log(error)
+        }else{
+            res.redirect('pin')
+            console.log(req.file.filename)
         }
     })
-    // console.log(req.file, req.body)
-})
+})      
 
 //Delete route
 router.delete('/:id', (req, res)=>{
