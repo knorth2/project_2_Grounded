@@ -1,18 +1,19 @@
 <%- include('./partials/header.ejs') %>
     <a href="/mindful/new">Add a *new Post</a>
-   
+ 
     <ul>
         <% for(let i = 0; i < mindful.length; i++){ %>
-            <div>
+          
             <li>
-                <a href="/mindful/<%= mindful[i].id %>"> <%= mindful[i].myPic %> </a>
+                <a href="/mindful/<%= mindful[i].id %>"> <%= mindful[i].date %> <%= mindful[i].myPic %> </a>
                <p>  </p> 
                
             </li>
-            </div>
+            
        <% } %>
       
     </ul>
+ 
     <br>
     <br>
     <br>
