@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router()
 const Mindful = require('../models/mindful.js')
 const multer = require('multer');
-const upload = multer({dest: 'uploads/'})
+const upload = multer({ dest: 'uploads/' })
 
 
 //how to make home??
@@ -73,7 +73,24 @@ router.post('/', (req, res)=>{
 
 //upload photo
 router.post('/pin', upload.single('myPic'), (req, res)=>{
-    console.log(req.file, req.body)
+    const newPin = new Mindful({
+        date: req.body.date,
+        beforeMovement: req.body.beforeMovement,
+        water: req.body.water,
+        sleep: req.body.sleep,
+        movement: req.body.movement,
+        afterMovement: req.body.afterMovement,
+        positiveEvent: req.body.positiveEvent,
+        myPic: req.file.filename,
+    })
+    newPin.save((error, data)=>{
+        if(!error){
+            res.redirect('/mindful/index')
+        }else{
+            console.log(error)
+        }
+    })
+    // console.log(req.file, req.body)
 })
 
 //Delete route
