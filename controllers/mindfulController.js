@@ -68,27 +68,6 @@ router.post("/", (req, res) => {
   });
 });
 
-//upload photo
-const Storage = multer.diskStorage({   //access both the file and the body
-     dest: 'uploads',           //this tells it to create uploads folder to store files
-     filename: (req, file, cb)=>{
-        cb(null, file.myPic)
-     }
-    })
-const upload = multer({
-    storage:Storage
-})
-
-router.post('/', upload.single('myPic'), (req, res)=>{ //use name field value on the form so multer knows while field on the request it should look for the files in
-    Mindful.save(() =>{
-        if (error){
-            console.log(error)
-        }else{
-            res.redirect('/mindful/index')
-            console.log(req.file.filename)
-        }
-    })
-})
 
 //Delete route
 router.delete("/:id", (req, res) => {

@@ -6,3 +6,12 @@ ul{
     list-style: none;  
  
 }
+.indexContainer{
+height: 150px;
+width: 100%;
+object-fit: fill;
+}
+.indexImage{
+    height: 150px;
+    width: 150px;
+}

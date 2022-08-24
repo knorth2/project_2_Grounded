@@ -1,21 +1,22 @@
 <%- include('./partials/header.ejs') %>
     <a href="/mindful/new">Add a *new Post</a>
- 
+    <div >
+        <h1></h1>
     <ul>
+        <div class="indexContainer">
         <% for(let i = 0; i < mindful.length; i++){ %>
-          
+          <div >
             <li>
-                <a href="/mindful/<%= mindful[i].id %>"> <%= mindful[i].date %> <%= mindful[i].myPic %> </a>
-               <p>  </p> 
-               
+                <p> <%= mindful[i].date %> </p> 
+                <a href="/mindful/<%= mindful[i].id %>"> <img class="indexImage" src="<%=mindful[i].image%>">  </a> 
             </li>
-            
+        </div>
        <% } %>
-      
+    </div> 
     </ul>
- 
+
     <br>
     <br>
     <br>
-    
+</div> 
     <%- include('./partials/footer.ejs') %>
