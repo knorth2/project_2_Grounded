@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 //Create Schema
 const mindfulSchema = new mongoose.Schema({
-    date: {type: String, required: true},
+    date: String,
     beforeMovement: String,
     water: Number,
     sleep: Number,
