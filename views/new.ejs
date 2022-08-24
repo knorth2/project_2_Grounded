@@ -4,7 +4,7 @@
     <br>
     <h1>Add New Mindful Event</h1>
     
-    <form method="POST" action="/mindful">
+    <form method="POST"  enctype="multipart/form-data" action="/mindful">
         <fieldset>
             <label for="date">Date: </label>
             <input id="date" type="text" name="date" placeholder="Enter new date">
@@ -30,8 +30,12 @@
             <input id="afterMovement" type="text" name="afterMovement" placeholder="Enter mindset">
         </fieldset>
         <fieldset>
-            <label for="positiveEvent"> </label>
+            <label for="positiveEvent">What is something positive that happened today? </label>
             <textarea name="positiveEvent" type="text" id="positiveEvent" cols="30" rows="10" placeholder="postive" ></textarea>
+        </fieldset>
+        <fieldset>
+            <label for="myPic">Upload a photo: </label>
+            <input type="file" name="myPic"> <br>
         </fieldset>
         <br>
         <button>Add Mindful Event!</button>
