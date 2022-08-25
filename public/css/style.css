@@ -30,6 +30,7 @@ body{
   padding: 10px;
   border: 1px solid #808080;
   background: white;
+  color: #808080;
 }
 .homeFooter{
     margin-left: 20px;
@@ -37,7 +38,9 @@ body{
 
 ul{
     list-style: none;  
- 
+}
+a{
+    text-decoration: none;
 }
 .newContainer{
 display: flex;
@@ -48,16 +51,16 @@ justify-content: center;
 text-align: center;
 font-size: 60px;
 }
-.newHeader{
-    padding: 50px;
-    text-align: center;
+.newHeader, .showHeader, .indexHeader{
+    padding: 35px;
     background:  #808080;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     display: flex;
     justify-content: space-between;
+    
 }
-.newFooter{
+.newFooter, .showFooter, .indexFooter{
     text-align: center;
 }
 .newButton{
@@ -69,14 +72,17 @@ font-size: 60px;
 }
 
 .indexContainer{
-height: 150px;
-width: 100%;
-object-fit: fill;
+display: grid;
 }
 .indexImage{
     height: 150px;
     width: 150px;
 }
+.showImage{
+    height: 200px;
+    width: 200px;  
+}
+
 input[type=text], input[type=number], input[type=url] {
     width: 100%;
     background-color: white;

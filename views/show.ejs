@@ -1,6 +1,9 @@
+<header class="showHeader">
 <%- include('./partials/header.ejs') %>
+<a href="/mindful/index">List of events (index)</a>
+</header>
 
-    <a href="/mindful/index">List of events (index)</a>
+    
     <br>
     <h1>Today's Date: <%= mindful.date %></h1>
     <h3>Mindset before Movement:</h3> <P><%= mindful.beforeMovement %></p>
@@ -9,7 +12,7 @@
     <h3>How did you move your body today? </h3> <p> <%= mindful.movement %></p>
     <h3>Mindset after Movement:</h3>  <p> <%= mindful.afterMovement %></p>
     <h3>What is something positive that happened today?</h3>  <p> <%= mindful.positiveEvent %></p>
-    <h3>Photo of your day: </h3> <img src="<%=mindful.image%>">
+    <h3>Photo of your day: </h3> <img class="showImage" src="<%=mindful.image%>">
     <br>
     <a class="showEdit" href="/mindful/<%=mindful.id %>/edit">Edit</a>
     <br>
@@ -21,5 +24,6 @@
     <br>
     <br>
 
-
+<footer class="showFooter">
     <%- include('./partials/footer.ejs') %>
+</footer>
