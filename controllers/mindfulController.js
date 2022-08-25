@@ -5,7 +5,7 @@ const Mindful = require("../models/mindful.js");
 
 //how to make home??
 router.get("/", (req, res) => {
-  res.redirect("home.ejs");
+  res.redirect("/mindful");
 });
 
 //index route
