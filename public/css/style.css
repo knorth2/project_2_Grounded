@@ -1,13 +1,28 @@
 body{
     background-color: aquamarine;
+    color: #D8BFD8;
 }
 .homeBody{
-    background-image: url("https://images.pexels.com/photos/606541/pexels-photo-606541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-image: url("https://images.pexels.com/photos/1445417/pexels-photo-1445417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-repeat: no-repeat;
     background-size: cover;
 }
 .homeContainer{
-    
+   position: relative;
+  width: 300px;
+  border: 1px solid #808080;
+  padding: 20px;
+  margin-left: 50px;
+  margin-top: 50px;
+
+}
+.homeTitle{
+    color: #808080;
+    font-size: 60px;
+    margin-left: 20px;
+}
+.start{
+   margin-left: 60px; 
 }
 
 ul{
