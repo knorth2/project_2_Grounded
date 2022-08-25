@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Mindful = require("../models/mindful.js");
-const multer = require("multer");
+
 
 //how to make home??
 router.get("/", (req, res) => {
