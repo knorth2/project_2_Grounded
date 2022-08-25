@@ -29,7 +29,7 @@ app.use('/mindful', mindfulController)
 
 //default route
 app.get('/', (req, res)=>{
-    res.send('Are you listening?')
+    res.redirect("/mindful")
 })
 
 app.listen(PORT, ()=>{
