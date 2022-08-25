@@ -1,9 +1,12 @@
-<%- include('./partials/header.ejs') %>
-    <a href="/mindful/index">List of Events (index)</a>
-    <br>
-    <br>
-    <h1>Add New Mindful Event</h1>
+<header class="newHeader">
+    <%- include('./partials/header.ejs') %>
+    <a href="/mindful/index">Calendar of Events (index)</a>
+</header>
     
+    <br>
+    <br>
+    <h1 class="h1New"> New Mindful Event</h1>
+    <div class="newContainer">
     <form method="POST"  action="/mindful">
         <fieldset>
             <label for="date">Date: </label>
@@ -22,7 +25,7 @@
             <input id="sleep" type="number" name="sleep" placeholder="Enter sleep in hours">
         </fieldset>
         <fieldset>
-            <label for="movement">How did you move your body today?: </label>
+            <label for="movement">How did you move your body today? </label>
             <input id="movement" type="text" name="movement" placeholder="Did you move today?">
         </fieldset>
         <fieldset>
@@ -30,15 +33,17 @@
             <input id="afterMovement" type="text" name="afterMovement" placeholder="Enter mindset">
         </fieldset>
         <fieldset>
-            <label for="positiveEvent">What is something positive that happened today? </label>
-            <textarea name="positiveEvent" type="text" id="positiveEvent" cols="30" rows="10" placeholder="postive" ></textarea>
+            <label for="positiveEvent">What is something positive that happened today? </label> 
+            <textarea name="positiveEvent" type="text" id="positiveEvent" cols="30" rows="10" ></textarea>
         </fieldset>
         <fieldset>
             <label for="image">Upload a photo: </label>
             <input id="image" type="url" name="image"  > <br>
         </fieldset>
         <br>
-        <button>Add Mindful Event!</button>
+        <button class="newButton">Add Mindful Event!</button>
     </form>
-    
+</div>
+<footer class="newFooter">
     <%- include('./partials/footer.ejs') %>
+</footer>
