@@ -1,6 +1,9 @@
+<header class="editHeader">
 <%- include('./partials/header.ejs') %>
 <a href="/mindful/index">List of Events (index)</a>
-    <h1>Edit Page</h1>
+</header>
+    <h1 class="h1Edit">Edit Page</h1>
+    <div class="editContainer">
     <form action="/mindful/<%= mindful.id %>?_method=PUT" method="POST">
         <fieldset>
             <label for="date">Date:</label>
@@ -35,10 +38,12 @@
             <input id="image" type="url" name="image" value="<%=mindful.image%>" > <br>
         </fieldset>
         <br>
-        <br>
-        <br>
-        <input type="submit" name="" value="Submit Changes"/>
+        
+        
+        <input class="editSubmit" type="submit" name="" value="Submit Changes"/>
     </form>
     <br>
-   
+</div>
+<footer class="editFooter">
     <%- include('./partials/footer.ejs') %>
+</footer>

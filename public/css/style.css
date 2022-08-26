@@ -32,9 +32,7 @@ body{
   background: white;
   color: #808080;
 }
-.homeFooter{
-    margin-left: 20px;
-}
+
 
 ul{
     list-style: none;  
@@ -47,11 +45,11 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
-.h1New{
+.h1New, .h1Edit{
 text-align: center;
 font-size: 60px;
 }
-.newHeader, .showHeader, .indexHeader{
+.newHeader, .showHeader, .indexHeader, .editHeader{
     padding: 35px;
     background:  #808080;
     color: white;
@@ -60,10 +58,10 @@ font-size: 60px;
     justify-content: space-between;
     
 }
-.newFooter, .showFooter, .indexFooter{
+.newFooter, .showFooter, .indexFooter, .homeFooter, .editFooter{
     text-align: center;
 }
-.newButton{
+.newButton, .editSubmit{
     background-color: white;
     border-radius: 5px;
     padding: 15px;
@@ -82,6 +80,22 @@ display: grid;
     height: 200px;
     width: 200px;  
 }
+.showContainer{
+ text-align: center;
+}
+.showPhoto{
+    font-size: 40px;
+}
+.showEdit, .delete{
+    display: flex;
+    justify-content: center;
+}
+.editContainer{
+    display: flex;
+align-items: center;
+justify-content: center;
+}
+
 
 input[type=text], input[type=number], input[type=url] {
     width: 100%;
@@ -91,6 +105,9 @@ input[type=text], input[type=number], input[type=url] {
     border: 1px solid #808080;
     border-radius: 5px;
     font-size: 15px;
+  }
+  input[type=value]{
+    width: 80%
   }
 
   textarea {
