@@ -45,7 +45,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
-.h1New, .h1Edit{
+.h1New, .h1Edit, .h1Index{
 text-align: center;
 font-size: 60px;
 }
@@ -70,15 +70,25 @@ font-size: 60px;
 }
 
 .indexContainer{
-display: grid;
+    max-width: 200px;
+    padding: 50px 20px;
+    margin: 0 auto;
+}
+.indexItems {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 .indexImage{
-    height: 150px;
-    width: 150px;
+    max-width: 100%;
+    border-radius: 10px;
+    position: relative;
+    
 }
+
 .showImage{
     height: 200px;
     width: 200px;  
+    border-radius: 10px;
 }
 .showContainer{
  text-align: center;
@@ -120,5 +130,7 @@ input[type=text], input[type=number], input[type=url] {
     background-color: #f8f8f8;
     resize: none;
   }
+  
+
   
  
