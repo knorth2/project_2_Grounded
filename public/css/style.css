@@ -7,6 +7,7 @@ body{
     background-image: url("https://images.pexels.com/photos/1445417/pexels-photo-1445417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 .homeContainer{
    position: relative;
@@ -70,19 +71,18 @@ font-size: 60px;
 }
 
 .indexContainer{
-    max-width: 200px;
-    padding: 50px 20px;
-    margin: 0 auto;
+    /* border: solid 2px #808080; */
+    
 }
 .indexItems {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(4, auto);
+    gap: 10px;
 }
 .indexImage{
-    max-width: 100%;
-    border-radius: 10px;
-    position: relative;
-    
+    height: 200px;
+    width: 200px;  
+    border-radius: 10px;  
 }
 
 .showImage{
@@ -107,7 +107,7 @@ justify-content: center;
 }
 
 
-input[type=text], input[type=number], input[type=url] {
+input[type=text], input[type=number], input[type=url]{
     width: 100%;
     background-color: white;
     padding: 12px ;
@@ -116,9 +116,7 @@ input[type=text], input[type=number], input[type=url] {
     border-radius: 5px;
     font-size: 15px;
   }
-  input[type=value]{
-    width: 80%
-  }
+
 
   textarea {
     width: 100%;
