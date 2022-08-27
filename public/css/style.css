@@ -17,7 +17,7 @@ body{
   /* border: 1px solid #808080;
   border-radius: 20px; */
   /* padding: 20px; */
-  margin-left: 50px;
+  margin-left: 40px;
   /* margin-top: 50px; */
 
 }
@@ -68,6 +68,9 @@ color: darkmagenta;
 }
 .newFooter, .showFooter, .indexFooter, .homeFooter, .editFooter{
     text-align: center;
+}
+.homeFooter{
+    margin-top: 440px;
 }
 .newButton, .editSubmit{
     background-color: white;
