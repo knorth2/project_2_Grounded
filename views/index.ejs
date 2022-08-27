@@ -5,13 +5,14 @@
 
 <h1 class="h1Index">Calendar of Events</h1>
 
-<ul class="indexContainer">
+<ul class="indexContainer"> 
   <% for(let i = 0; i < mindful.length; i++){ %>
-
+   
   <div class="indexItems">
+    <div id="indexDate"> <%= mindful[i].date %></div>
     <a href="/mindful/<%= mindful[i].id %>">
       <img class="indexImage" src="<%=mindful[i].image%>" />
-    </a><%= mindful[i].date %>
+    </a> 
   </div>
   <% } %>
 </ul>
