@@ -1,8 +1,9 @@
 <header class="editHeader">
 <%- include('./partials/header.ejs') %>
+<h1 class="h1Edit">Edit Event</h1>
 <a href="/mindful/index">List of Events (index)</a>
 </header>
-    <h1 class="h1Edit">Edit Page</h1>
+    
     <div class="editContainer">
     <form action="/mindful/<%= mindful.id %>?_method=PUT" method="POST">
         <fieldset>

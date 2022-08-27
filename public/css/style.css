@@ -40,24 +40,30 @@ ul{
 }
 a{
     text-decoration: none;
+    color: darkmagenta;
 }
 .newContainer{
 display: flex;
 align-items: center;
 justify-content: center;
 }
-.h1New, .h1Edit, .h1Index{
+.h1New, .h1Edit, .h1Index, .h1Show{
 text-align: center;
-font-size: 60px;
+font-size: 50px;
+color: darkmagenta;
 }
 .newHeader, .showHeader, .indexHeader, .editHeader{
-    padding: 35px;
+    padding: 30px;
     background:  #808080;
     color: white;
     font-size: 18px;
     display: flex;
-    justify-content: space-between;
-    
+    justify-content: space-between; 
+    border-radius: 10px;
+}
+
+.indexHeader{
+    margin-bottom: 80px;
 }
 .newFooter, .showFooter, .indexFooter, .homeFooter, .editFooter{
     text-align: center;
@@ -110,6 +116,7 @@ font-size: 60px;
     display: flex;
 align-items: center;
 justify-content: center;
+margin-top: 30px;
 }
 
 

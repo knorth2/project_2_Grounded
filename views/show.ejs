@@ -1,11 +1,12 @@
 <header class="showHeader">
 <%- include('./partials/header.ejs') %>
+<h1 class="h1Show"> <%= mindful.date %></h1>
 <a href="/mindful/index">List of events (index)</a>
 </header>
 
  <div class="showContainer">   
     <br>
-    <h1>Today's Date: <%= mindful.date %></h1>
+    
     <h3>Mindset before Movement:</h3> <P><%= mindful.beforeMovement %></p>
     <h3>Water Consumption Goals of the Day in ounces:</h3> <p> <%= mindful.water %></p>
     <h3>How much sleep did you get last night in hours?</h3> <p> <%= mindful.sleep %></p>
