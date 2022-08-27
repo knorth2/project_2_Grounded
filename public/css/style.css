@@ -62,6 +62,11 @@ color: darkmagenta;
     justify-content: space-between; 
     border-radius: 10px;
 }
+#newHeaderImg{
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+}
 
 .indexHeader{
     margin-bottom: 80px;
