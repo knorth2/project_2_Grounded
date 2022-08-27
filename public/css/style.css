@@ -72,12 +72,17 @@ font-size: 60px;
 
 .indexContainer{
     /* border: solid 2px #808080; */
-    
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
 }
 .indexItems {
     display: grid;
     grid-template-columns: repeat(4, auto);
     gap: 10px;
+  
+  
 }
 .indexImage{
     height: 200px;

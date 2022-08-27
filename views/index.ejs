@@ -4,18 +4,16 @@
 </header>
 
 <h1 class="h1Index">Calendar of Events</h1>
-<div class="indexContainer">
-  <ul>
-    <% for(let i = 0; i < mindful.length; i++){ %>
-    <li>
-      <p><%= mindful[i].date %></p>
-      <div class="indexItems">
-        <a href="/mindful/<%= mindful[i].id %>">
-          <img class="indexImage" src="<%=mindful[i].image%>" />
-        </a>
-      </div>
-    </li>
-    <% } %>
-  </ul>
-</div>
+
+<ul class="indexContainer">
+  <% for(let i = 0; i < mindful.length; i++){ %>
+
+  <div class="indexItems">
+    <a href="/mindful/<%= mindful[i].id %>">
+      <img class="indexImage" src="<%=mindful[i].image%>" />
+    </a><%= mindful[i].date %>
+  </div>
+  <% } %>
+</ul>
+
 <footer class="indexFooter"><%- include('./partials/footer.ejs') %></footer>
