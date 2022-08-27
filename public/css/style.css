@@ -87,7 +87,7 @@ color: darkmagenta;
  align-items: center;
 }
 .indexItems {
-    display: grid;
+    width: 250px;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(8, auto);
     gap: 10px;
@@ -99,7 +99,10 @@ color: darkmagenta;
     width: 200px;  
     border-radius: 10px;  
 }
-
+#indexDate{
+    text-align: center;
+    margin-right: 40px;
+}
 
 .showImage{
     height: 200px;
