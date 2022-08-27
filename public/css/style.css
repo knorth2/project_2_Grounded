@@ -8,27 +8,28 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    
+  
 }
 .homeContainer{
-   position: relative;
+  position: relative;
   width: 300px;
-  border: 1px solid #808080;
-  border-radius: 20px;
-  padding: 20px;
+  /* border: 1px solid #808080;
+  border-radius: 20px; */
+  /* padding: 20px; */
   margin-left: 50px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 
 }
 .homeTitle{
     color: #808080;
     font-size: 60px;
     margin-left: 20px;
-   
 }
 .start{
-   margin-left: 65px; 
+   margin-left: 55px; 
   border-radius: 10px;
-  padding: 10px;
+  padding: 8px;
   border: 1px solid #808080;
   background: white;
   color: #808080;
