@@ -69,8 +69,8 @@ color: darkmagenta;
 .newFooter, .showFooter, .indexFooter, .homeFooter, .editFooter{
     text-align: center;
 }
-.homeFooter{
-    margin-top: 440px;
+.homeFooter, .indexFooter{
+    margin-top: 500px;
 }
 .newButton, .editSubmit{
     background-color: white;
