@@ -1,7 +1,23 @@
 const express = require("express");
 const router = express.Router();
 const Mindful = require("../models/mindful.js");
+// get user model 
+const User = require('../models/users')
 
+// custom middleware to require authentication on routes
+const authRequired = (req, res, next) => {
+	if(req.session.currentUser){
+		// a user is signed in
+		next()
+		// next is part of express
+		// it does what it says
+		// i.e, go on to the next thing
+	} else {
+		// if there is no user
+		res.send('You must be logged in to do that!')
+		// res.redirect('/user/signin')
+	}
+}
 
 //how to make home??
 router.get("/", (req, res) => {
@@ -60,10 +76,20 @@ router.get("/:id", async (req, res) => {
 
 //create
 router.post("/", (req, res) => {
+  req.body._creator = req.session.currentUser._id
+  console.log(req.body)
   Mindful.create(req.body, (error, data) => {
     if (error) {
       console.log("error", error);
     } else {
+      // now lets add this fruit to the user side...
+			User.findOne({username: req.session.currentUser.username}, (err, foundUser) => {
+				if (foundUser) {
+					console.log(foundUser)
+					foundUser.ownedFruits.push(createdFruit)
+					foundUser.save()
+				}
+			})
       res.redirect("/mindful/index");
     }
   });

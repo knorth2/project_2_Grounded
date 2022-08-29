@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 //Create Schema
 const mindfulSchema = new mongoose.Schema({
+    _creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User'}, // if you want to reference back the other way
     date: String,
     beforeMovement: String,
     water: Number,
