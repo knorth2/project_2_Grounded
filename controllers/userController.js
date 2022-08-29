@@ -1,24 +1,20 @@
-const express = require('express')
-const bcrypt = require('bcrypt')
+const express = require("express")
+const bcrypt = require("bcrypt")
 
 //  User model
-const User = require('../models/users')
+const User = require("../models/users")
 const router = express.Router()
 
-router.get('/register', (req, res) => {
-  res.render('users/register.ejs')
+router.get("/register", (req, res) => {
+  res.render("users/register.ejs")
 })
 
-router.post('/register', (req, res) => {
+router.post("/register", (req, res) => {
   // we need to encrypt our passwords
-  // we can use the bcrypt library for this
-  // we need to import the libary at the top of our file
   // first we need to generate salt
   const salt = bcrypt.genSaltSync(10)
   // salt is a random garbage we add to our encrypted passwords
-  // the number we pass to genSaltSync determines how much salt
-  // we are adding, the higher the number the more secure, but the longer it takes
-  // now we're going to generate the actual hashed password
+  // generate the actual hashed password
   // console.log(req.body)
   req.body.password = bcrypt.hashSync(req.body.password, salt)
   // console.log(req.body)
@@ -26,23 +22,24 @@ router.post('/register', (req, res) => {
   // first lets see if somebody else already has this username
   User.findOne({username: req.body.username}, (err, userExists) => {
     if(userExists) {
-      res.send('that username is taken')
+      res.send("that username is taken")
     } else {
       User.create(req.body, (err, createdUser) => {
         // console.log(createdUser)
         // res.send('user created')
         req.session.currentUser = createdUser
-        res.redirect('/mindful/new')
+        
       })
+      res.redirect("/mindful/new")
     }
   })
 })
 
-router.get('/signin', (req, res) => {
-  res.render('users/signin.ejs')
+router.get("/signin", (req, res) => {
+  res.render("users/signin.ejs")
 })
 
-router.post('/signin', (req, res) => {
+router.post("/signin", (req, res) => {
   // we need to get the user with that username
   User.findOne({ username: req.body.username }, (err, foundUser) => {
     if (foundUser) {
@@ -56,30 +53,29 @@ router.post('/signin', (req, res) => {
         req.session.currentUser = foundUser
         // we are letting session know
         // that we have logged in
-        res.redirect('/mindful/new')
+        res.redirect("/mindful/index")
       } else {
         // if they don't match, send a message
-        res.send('Invalid username or password')
+        res.send("Invalid username or password")
       }
     } else {
       // if they don't exist, we need to send a message
-      res.send('Invalid username or password')
+      res.send("Invalid username or password")
     }
   })
 })
 
 // DESTROY session route
-router.get('/signout', (req, res) => {
+router.get("/signout", (req, res) => {
   // this destroy's the session
   req.session.destroy()
-  res.redirect('/mindful')
+  res.redirect("/mindful")
 })
 
-// example in a route to show you that we have fruits that belong to a user if created when signedin
-router.get('/test', (req, res) => {
+// example in a route to show you that we have events that belong to a user if created when signedin
+router.get("/test", (req, res) => {
   console.log(req.session.currentUser)
-  // id of the fruit owned
-  // type returned will be an ARRAY
+  // id of the mindful owned
   console.log(req.session.currentUser.ownedMindful)
 })
 
