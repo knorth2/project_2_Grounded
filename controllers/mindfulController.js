@@ -1,15 +1,27 @@
 const express = require("express");
 const router = express.Router();
 const Mindful = require("../models/mindful.js");
+// get user model 
+const User = require("../models/users.js")
 
+// custom middleware to require authentication on routes
+const authRequired = (req, res, next) => {
+	if(req.session.currentUser){
+		// a user is signed in
+		next()
+	} else {
+		res.send("You must be logged in to do that!")
+		// res.redirect('/user/signin')
+	}
+}
 
 //how to make home??
-router.get("/", (req, res) => {
+router.get("/",  (req, res) => {
   res.render("home.ejs");
 });
 
 //index route
-router.get("/index", async (req, res) => {
+router.get("/index", authRequired, async (req, res) => {
   let mindful = await Mindful.find({});
   res.render("index.ejs", { mindful });
 });
@@ -46,7 +58,7 @@ router.get("/index", async (req, res) => {
 
 
 // NEW
-router.get("/new", (req, res) => {
+router.get("/new", authRequired, (req, res) => {
   res.render("new.ejs");
 });
 
@@ -60,10 +72,20 @@ router.get("/:id", async (req, res) => {
 
 //create
 router.post("/", (req, res) => {
-  Mindful.create(req.body, (error, data) => {
+  req.body._creator = req.session.currentUser._id
+  console.log(req.body)
+  Mindful.create(req.body, (error, createdMindful) => {
     if (error) {
       console.log("error", error);
     } else {
+      // now lets add this mindful event to the user side...
+			User.findOne({username: req.session.currentUser.username}, (err, foundUser) => {
+				if (foundUser) {
+					console.log(foundUser)
+					foundUser.ownedMindful.push(createdMindful)
+					foundUser.save()
+				}
+			})
       res.redirect("/mindful/index");
     }
   });
@@ -79,7 +101,7 @@ router.delete("/:id", (req, res) => {
 });
 
 // EDIT
-router.get("/:id/edit", (req, res) => {
+router.get("/:id/edit", authRequired, (req, res) => {
   Mindful.findById(req.params.id, (err, data) => {
     res.render("edit.ejs", { mindful: data });
   });
