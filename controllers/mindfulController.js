@@ -23,6 +23,7 @@ router.get("/",  (req, res) => {
 //index route
 router.get("/index", authRequired, async (req, res) => {
   let mindful = await Mindful.find({});
+  // let user = await User.findById(req.session.currentUser._id)
   res.render("index.ejs", { mindful });
 });
 

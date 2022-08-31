@@ -11,7 +11,7 @@
 
 <ul class="indexContainer"> 
   <% for(let i = 0; i < mindful.length; i++){ %>
-  
+    
   <div class="indexItems">
     <div id="indexDate"> <%= mindful[i].date %></div>
     <a href="/mindful/<%= mindful[i].id %>">
@@ -19,7 +19,7 @@
     </a> 
   </div>
   <% } %>
-
+  
 </ul>
 
 <footer class="indexFooter"><%- include('./partials/footer.ejs') %></footer>
