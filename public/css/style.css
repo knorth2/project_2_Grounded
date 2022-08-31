@@ -34,6 +34,11 @@ body{
   background: white;
   color: #808080;
 }
+.start:hover{
+    background-color: darkmagenta;
+    color: white;
+  
+}
 
 
 ul{
@@ -48,10 +53,19 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
-.h1New, .h1Edit, .h1Index, .h1Show{
+.registerContainer, .signinContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
+}
+.h1New, .h1Edit, .h1Index, .h1Show, .h1Register, .h1Signin{
 text-align: center;
 font-size: 50px;
 color: darkmagenta;
+}
+.h1register, .h1Signin{
+    margin-bottom: 50px;
 }
 .newHeader, .showHeader, .indexHeader, .editHeader{
     padding: 30px;
@@ -60,6 +74,13 @@ color: darkmagenta;
     font-size: 18px;
     display: flex;
     justify-content: space-between; 
+    border-radius: 10px;
+}
+.registerHeader, .signinHeader{
+    
+    background:  #808080;
+    color: white;
+    font-size: 18px;
     border-radius: 10px;
 }
 #newHeaderImg{
@@ -77,7 +98,7 @@ color: darkmagenta;
 .homeFooter, .indexFooter{
     margin-top: 500px;
 }
-.newButton, .editSubmit{
+.newButton, .editSubmit, .registerButton, .signinButton{
     background-color: white;
     border-radius: 5px;
     padding: 15px;
@@ -131,7 +152,8 @@ margin-top: 30px;
 }
 
 
-input[type=text], input[type=number], input[type=url]{
+input[type=text], input[type=number], input[type=url], input[type=password]{
+    
     width: 100%;
     background-color: white;
     padding: 12px ;
@@ -140,7 +162,7 @@ input[type=text], input[type=number], input[type=url]{
     border-radius: 5px;
     font-size: 15px;
   }
-
+ 
 
   textarea {
     width: 100%;

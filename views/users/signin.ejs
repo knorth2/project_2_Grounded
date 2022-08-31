@@ -1,5 +1,9 @@
-<%- include('../partials/header.ejs') %>
-    <h1>Sign In</h1>
+<header class="signinHeader">
+  <%- include('../partials/header.ejs') %>
+  <h1 class="h1Signin"> Mindful <img id="newHeaderImg" src="https://images.freeimages.com/images/large-previews/f65/succulent-3-1174084.jpg" alt=""></h1>
+  
+</header>
+    <div class="signinContainer">
     <form action="/users/signin" method="POST">
       <fieldset>
         <label for="username">Username:</label>
@@ -9,7 +13,8 @@
         <label for="password">Password:</label>
         <input type="password" name="password">
       </fieldset>
-      <input type="submit" value="Sign In">
+      <input class="signinButton" type="submit" value="Sign In">
     </form>
+</div>
   </body>
 </html>
