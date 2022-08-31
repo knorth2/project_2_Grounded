@@ -68,7 +68,6 @@ color: darkmagenta;
     margin-bottom: 50px;
 }
 .newHeader, .showHeader, .indexHeader, .editHeader{
-    padding: 30px;
     background:  #808080;
     color: white;
     font-size: 18px;
@@ -77,11 +76,13 @@ color: darkmagenta;
     border-radius: 10px;
 }
 .registerHeader, .signinHeader{
-    
     background:  #808080;
     color: white;
     font-size: 18px;
     border-radius: 10px;
+}
+.navHeader, .indexLink, .showLink, .editLink{
+    margin: 10px ;
 }
 #newHeaderImg{
     height: 70px;
@@ -104,6 +105,9 @@ color: darkmagenta;
     padding: 15px;
     border: 1px solid #808080;
     color: #808080;
+}
+.registerButton, .signinButton{
+    margin-top: 20px;
 }
 
 .indexContainer{
