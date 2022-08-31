@@ -81,7 +81,7 @@ color: darkmagenta;
     font-size: 18px;
     border-radius: 10px;
 }
-.navHeader, .indexLink, .showLink, .editLink{
+.navHeader, .indexLink, .showLink, .editLink, .newLink{
     margin: 10px ;
 }
 #newHeaderImg{
