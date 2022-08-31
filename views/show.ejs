@@ -4,6 +4,7 @@
 <h1 class="h1Show"> <%= mindful.date %> <img id="newHeaderImg" src="https://images.freeimages.com/images/large-previews/f65/succulent-3-1174084.jpg" alt=""></h1>
 
 <a class="showLink" href="/mindful/index">List of events (index)</a>
+
 </header>
 
  <div class="showContainer">   
@@ -16,17 +17,15 @@
     <h3>Mindset after Movement:</h3>  <p> <%= mindful.afterMovement %></p>
     <h3>What is something positive that happened today?</h3>  <p> <%= mindful.positiveEvent %></p>
     <h3 class="showPhoto">Photo of your day: </h3> <img class="showImage" src="<%=mindful.image%>">
-</div>
+    <br>
     <br>
     <a class="showEdit" href="/mindful/<%=mindful.id %>/edit">Edit</a>
-    <br>
-    <br>
+</div>
+  
     <form class="delete" action="/mindful/<%= mindful.id %>?_method=DELETE" method="POST">
         <input class="deleteButton" type="submit" value="DELETE">
     </form>
-    <br>
-    <br>
-    <br>
+   
 
 <footer class="showFooter">
     <%- include('./partials/footer.ejs') %>

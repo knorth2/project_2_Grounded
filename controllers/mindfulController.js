@@ -70,6 +70,8 @@ router.get("/:id", async (req, res) => {
   });
 });
 
+
+
 //create
 router.post("/", (req, res) => {
   req.body._creator = req.session.currentUser._id
@@ -106,6 +108,7 @@ router.get("/:id/edit", authRequired, (req, res) => {
     res.render("edit.ejs", { mindful: data });
   });
 });
+
 
 // UPDATE
 router.put("/:id", (req, res) => {
