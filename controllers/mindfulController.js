@@ -15,16 +15,16 @@ const authRequired = (req, res, next) => {
 	}
 }
 
-//home page
-// router.get("/",  (req, res) => {
-//   res.render("home.ejs");
-// });
+// home page
+router.get("/",  (req, res) => {
+  res.render("home.ejs");
+});
 
 //index route
-router.get("/", authRequired, async (req, res) => {
+router.get("/index",  async (req, res) => {
   let mindful = await Mindful.find({});
-  let user = await User.findById(req.session.currentUser._id)
-  res.render("index.ejs", { mindful, user});
+  // let user = await User.findById(req.session.currentUser._id)
+  res.render("index.ejs", { mindful});
 });
 
 // // SEED
@@ -59,7 +59,7 @@ router.get("/", authRequired, async (req, res) => {
 
 
 // NEW
-router.get("/new", authRequired, (req, res) => {
+router.get("/new",  (req, res) => {
   res.render("new.ejs");
 });
 
