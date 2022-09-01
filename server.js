@@ -52,7 +52,7 @@ app.use('/users', userController)
 
 //default route
 app.get('/', (req, res)=>{
-    res.redirect("/mindful")
+    res.render("home.ejs")
 })
 
 app.listen(PORT, ()=>{

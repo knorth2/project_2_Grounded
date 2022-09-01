@@ -15,16 +15,16 @@ const authRequired = (req, res, next) => {
 	}
 }
 
-//how to make home??
-router.get("/",  (req, res) => {
-  res.render("home.ejs");
-});
+//home page
+// router.get("/",  (req, res) => {
+//   res.render("home.ejs");
+// });
 
 //index route
-router.get("/index", authRequired, async (req, res) => {
+router.get("/", authRequired, async (req, res) => {
   let mindful = await Mindful.find({});
-  // let user = await User.findById(req.session.currentUser._id)
-  res.render("index.ejs", { mindful });
+  let user = await User.findById(req.session.currentUser._id)
+  res.render("index.ejs", { mindful, user});
 });
 
 // // SEED
@@ -75,7 +75,7 @@ router.get("/:id", async (req, res) => {
 
 //create
 router.post("/", (req, res) => {
-  req.body._creator = req.session.currentUser._id
+  req.body.username = req.session.currentUser._id
   console.log(req.body)
   Mindful.create(req.body, (error, createdMindful) => {
     if (error) {

@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt")
 //  User model
 const User = require("../models/users")
 const router = express.Router()
-const {route} = require('./mindfulController.js')
 
 router.get("/register", (req, res) => {
   res.render("users/register.ejs")
@@ -21,10 +20,8 @@ router.post("/register", (req, res) => {
       res.send("that username is taken")
     } else {
       User.create(req.body, (err, createdUser) => {
-        console.log(createdUser)
-        // res.send('user created')
         req.session.currentUser = createdUser
-        res.redirect("/mindful/new")
+        res.redirect("/mindful/index")
       })
     }
   })
